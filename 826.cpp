@@ -3,7 +3,7 @@ public:
     int maxProfitAssignment(vector<int>& difficulty, vector<int>& profit, vector<int>& worker) {
         
         /* 
-            TC - O(NlogN) [sorting]
+            TC - O(NlogN + M) [sorting]
             SC - O(N) [dp]
         */
 
@@ -21,7 +21,7 @@ public:
         
 
         int i = worker.size() - 1;
-        while(i >= 0){
+        while(i >= 0){                          //O(M)
             if(dp.size() == 0) break;
             if(dp.back().second <= worker[i]) {
                 res += dp.back().first;
